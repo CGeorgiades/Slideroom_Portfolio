@@ -1,0 +1,12 @@
+//C lib externs
+extern def srand(int seed);
+extern def rand()->int;
+extern def clock()->int;
+
+def main()->int {
+	srand(clock()); //Suitably random for our purposes
+	let x = rand();
+	printint(x);
+	println();
+	return 0;
+}

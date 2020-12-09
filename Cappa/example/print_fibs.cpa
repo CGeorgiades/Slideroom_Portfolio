@@ -1,0 +1,19 @@
+def print_fibs_to_x(int x) {
+	let a = 1;
+	let b = 1;
+	let c: int;
+	let i = 0;
+	while i < x {
+		i = i + 1;
+		printint(a); //Builtin function
+		println(); //Builtin function
+		c = a + b;
+		b = a;
+		a = c;
+	}
+}
+def main()->int {
+	print_fibs_to_x(10);
+	return 0;
+}
+

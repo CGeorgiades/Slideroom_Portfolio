@@ -1,0 +1,17 @@
+As the program has no GUI, this file describes how to use the program
+Use left click to draw something. It can be simple and small, or something complex. It really doesn't matter.
+Use right click to clear the screen while in drawing mode
+
+Press Soace to enter the fourier approximation mode
+
+In the fourier approximation mode, the program will make use of the complex fourier transform to approximate the drawing.
+All the lines are just parts of the transform, you can see their trail as a red trail drawing across the image.
+Note that the function is drawing in the same path that the user drew it in.
+You can use the scroll wheel to zoom in on the transform, to see just how close it is to the original
+Addionally, pressing 'w' and 's' speed up and slow down the drawer as it goes over the image
+You'll note the fourier lines are all blue at first, and then turn white. While they are blue, the program is still finishing generating the approximation, and will not have achieved maximum accuracy until the fourier lines turn white.
+Pressing right click in this mode will clear the trace line.
+Pressing 'o' will toggle whether or not to show the original image drawn while in this mode.
+Pressing 'f' will toggle whether or not the camera frame will follow the current position of the approximation
+
+Pressing space again returns the program to drawing mode.

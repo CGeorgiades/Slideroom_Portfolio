@@ -1,0 +1,50 @@
+//Generic Class Pair
+class Pair<H, K> {
+	H first;
+	K second;
+	def Pair(H a, K b){
+		first = a;
+		second = b;
+	}
+	/*Non-initializing constructor*/
+	def Pair(){}
+}
+def abs(double x)->double {
+	return x - 2 * (x<0)->int * x;
+}
+def ceil(double x)->int {
+	return (x->int) + (abs(x->int - x) > 0)->int;
+}
+def sqrt(double N)->double {
+	let A: double = N;
+	while abs(N - (A * A)) > 0.000000001 {
+		A = (A + (N / A)) / 2.0;
+	}
+	return A;
+}
+def main()->int {
+	let K = 400;
+	let arr: Pair(bool, int)[K];
+	for (let i = 0; i < arr.len; i = i + 1) {
+		arr[i].first = true;
+		arr[i].second = i + 1;
+	}
+	for (let i = 1; i < sqrt(arr.len)->int; i = i + 1) {
+		for (let j = 2 * arr[i].second - 1; j < arr.len; j = j + arr[i].second) {
+			arr[j].first = false;
+		}
+	}
+	for (let i = 0; i < arr.len; i = i + 1) {
+		if (arr[i].first) {
+			printch(' ');
+			if (arr[i].second < 10) {printch(' ');}
+			printint(arr[i].second);
+			if (arr[i].second < 100) {printch(' ');}
+			printch(' ');
+		} else {printstr("  .  ");}
+		if (i % ceil(sqrt(K)) == ceil(sqrt(K)) - 1) {
+			println();
+		}
+	}
+	return 0;
+}
